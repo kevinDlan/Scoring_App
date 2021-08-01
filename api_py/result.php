@@ -15,10 +15,9 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-ligth">
         <div class="container-xxl">
-            <a href="#intro" class="navbar-brand">
-                <span class="fw-bold text-secondary">
-                    <i class="bi bi-credit-card"></i>
-                    ML Scoring APP
+            <a href="#" class="navbar-brand">
+                <span class="fw-bold border-none bg-secondary text-white p-2 rounded-3">ML Scoring APP
+                    <i class="bi bi-credit-card ms-2"></i>
                 </span>
             </a>
             <!-- Toggle Button for mobile navbar -->

@@ -18,10 +18,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-ligth">
         <div class="container-xxl">
-            <a href="#intro" class="navbar-brand">
-                <span class="fw-bold text-secondary">
-                    <i class="bi bi-credit-card"></i>
-                    ML Scoring APP
+            <a href="#" class="navbar-brand">
+                <span class="fw-bold border-none bg-secondary text-white p-2 rounded-3">ML Scoring APP
+                    <i class="bi bi-credit-card ms-2"></i>
                 </span>
             </a>
             <!-- Toggle Button for mobile navbar -->
@@ -40,13 +39,6 @@
             </div>
         </div>
     </nav>
-    <!-- <form action="" method="POST">
-        <input type="text" placeholder="name" name="name" id="name"><br><br>
-        <input type="text" placeholder="surname"  name="surname" id="surname"><br><br>
-        <input type="submit" value="Submit">
-    </form> -->
-    <!-- form section -->
-    <!-- <div class="loader"></div>  -->
     <section id="contact">
         <div class="container-lg bg-light mt-4">
             <div class="text-center">
@@ -55,7 +47,8 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <form id="form" action="/api_py/controller.php" method="POST">
+                    <!-- App form -->
+                    <form id="form" action="/api_py/result.php" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="chang_nbre_trans" class="form-label">
@@ -114,16 +107,15 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-md-6">
                                 <label for="subject" class="form-label">Changement du Montant de la Transaction (T4 par
-                                    rapport
-                                    au T1)</label>
+                                    rapport T1)</label>
                                 <div class="input-group mb-4">
                                     <input required id="chang_mont_trans" name="chang_mont_trans" class="form-control"
                                         placeholder="2.594" type="number" step=0.01>
                                 </div>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <label for="subject" class="form-label">Nom et Prénom du Client</label>
                                 <div class="input-group mb-4">
                                     <input id="nom_prenom" name="nom_prenom" class="form-control"
@@ -134,7 +126,8 @@
                         <div class="mb-4 text-center lg">
                             <button id="submit" type="submit" class="btn btn-secondary btn-lg">
                                 <!-- <i class="bi bi-check-circle me-2"></i> -->
-                               <span id="loader" class="bi bi-check-circle me-2" role="status" aria-hidden="true"></span>
+                                <span id="loader" class="bi bi-check-circle me-2" role="status"
+                                    aria-hidden="true"></span>
                                 Valider
                             </button>
                         </div>
@@ -163,4 +156,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- main.js -->
 <script src="/js/main.js" lang="javascript"></script>
+
 </html>
