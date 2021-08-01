@@ -68,7 +68,7 @@
                 <?php else:?>
                     Le client est statisfait des services.
                 <?php endif;?>
-                <a href="../index.php" class="btn btn-outline-secondary mt-3 btn-lg">Retour</a>
+                <a href="../index.php" class="btn btn-secondary mt-3 btn-lg"><i class="bi bi-skip-backward-fill me-2"></i>Retour</a>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
                 <?php else:?>
                     Le client est statisfait des services et risque de se désabonné.
                 <?php endif;?>
-                <a href="../index.php" class="btn btn-outline-secondary mt-3 btn-lg">Retour</a>
+                <a href="../index.php" class="btn btn-secondary mt-3 btn-lg"><i class="bi bi-skip-backward-fill me-2"></i>Retour</a>
             </div>
         </div>
     </div>
