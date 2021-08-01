@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <!-- Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <title>Resultat</title>
+    <title>Scoring Result</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
             <a href="#intro" class="navbar-brand">
                 <span class="fw-bold text-secondary">
                     <i class="bi bi-credit-card"></i>
-                    Credit Card Test
+                    ML Scoring APP
                 </span>
             </a>
             <!-- Toggle Button for mobile navbar -->
