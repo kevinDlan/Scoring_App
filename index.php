@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-md navbar-ligth">
         <div class="container-xxl">
             <a href="#" class="navbar-brand">
-                <span class="fw-bold border-none bg-secondary text-white p-2 rounded-3">ML Scoring APP
+                <span class="fw-bold border-none bg-secondary text-white p-2 rounded-3">ML Credit Card APP
                     <i class="bi bi-credit-card ms-2"></i>
                 </span>
             </a>

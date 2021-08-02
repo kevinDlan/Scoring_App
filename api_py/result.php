@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-md navbar-ligth">
         <div class="container-xxl">
             <a href="#" class="navbar-brand">
-                <span class="fw-bold border-none bg-secondary text-white p-2 rounded-3">ML Scoring APP
+                <span class="fw-bold border-none bg-secondary text-white p-2 rounded-3">ML Credit Card APP
                     <i class="bi bi-credit-card ms-2"></i>
                 </span>
             </a>
@@ -48,8 +48,8 @@
           $var7 = $_POST['nbre_contact_12'];
           $nom_prenom =(array_key_exists('nom_prenom',$_POST)) ? $_POST['nom_prenom'] : "";
           
-        //  $api_link = 'http://card_credit.test/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
-         $api_link = 'https://ml-scoring-app.herokuapp.com/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
+         $api_link = 'http://card_credit.test/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
+        //  $api_link = 'https://ml-scoring-app.herokuapp.com/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
          $api_content = file_get_contents($api_link);
 
         $result = explode(' ',$api_content);
