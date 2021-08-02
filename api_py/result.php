@@ -48,44 +48,49 @@
           $var7 = $_POST['nbre_contact_12'];
           $nom_prenom =(array_key_exists('nom_prenom',$_POST)) ? $_POST['nom_prenom'] : "";
           
-         $api_link = 'http://card_credit.test/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
+        //  $api_link = 'http://card_credit.test/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
+         $api_link = 'https://ml-scoring-app.herokuapp.com/api_py/api.py?var1='.$var1.'&var2='.$var2.'&var3='.$var3.'&var4='.$var4.'&var5='.$var5.'&var6='.$var6.'&var7='.$var7;
          $api_content = file_get_contents($api_link);
+
+        $result = explode(' ',$api_content);
+        $class = $result[0];
+        $class_0_proba = floatval($result[1])*100;
+        $class_1_proba = floatval($result[2])*100;
       }
     ?>
-    <?php if(intval($api_content) == 1): ?>
+    
+    <?php if($class == 0): ?>
     <div class="col-9 col-lg-4 position-absolute top-50 start-50 translate-middle">
         <div class="card border-secondary border-1">
             <div class="card-header text-center h4 text-secondary">Résultat du Traitement</div>
             <div class="card-body text-center py-3">
-                <!-- <h4 class="card-title">Complète Edition</h4> -->
-                <!-- <p class="card-subtitle lead">eBook Download & All update</p> -->
                 <p class="display-4 my-4 text-success fw-bold"><i class="bi bi-emoji-smile-fill"></i></p>
                 <?php if($nom_prenom !=""):?>
                 <p class="card-text mx-5 fw-bold h5 d-none d-lg-block">
                     Le client <?= $nom_prenom; ?> est statisfait des services.
                 </p>
                 <?php else:?>
-                    Le client est statisfait des services.
+                    <p class="card-text mx-5 fw-bold h5 d-none d-lg-block">Le client est statisfait des services.</p>
                 <?php endif;?>
+                <p class="card-text mx-5 fw-bold h6 d-none d-lg-block">Il y a <?=$class_0_proba;?>% de chance qu'il reste</p>
                 <a href="../index.php" class="btn btn-secondary mt-3 btn-lg"><i class="bi bi-skip-backward-fill me-2"></i>Retour</a>
             </div>
         </div>
     </div>
-    <?php elseif(intval($api_content) == 0): ?>
+    <?php elseif($class == 1): ?>
     <div class="col-9 col-lg-4 position-absolute top-50 start-50 translate-middle">
         <div class="card border-secondary border-1">
             <div class="card-header text-center h4 text-secondary">Résultat du Traitement</div>
             <div class="card-body text-center py-3">
-                <!-- <h4 class="card-title">Complète Edition</h4> -->
-                <!-- <p class="card-subtitle lead">eBook Download & All update</p> -->
                 <p class="display-4 my-4 text-danger fw-bold"><i class="bi bi-emoji-angry-fill"></i></p>
                 <?php if($nom_prenom !=""):?>
                 <p class="card-text mx-5 fw-bold h5 d-none d-lg-block">
-                    Le client <?= $nom_prenom; ?> n'est pas statisfait des services et risque de se désabonné.
+                    Le client <?= $nom_prenom; ?> n'est pas statisfait des services.
                 </p>
                 <?php else:?>
-                    Le client est statisfait des services et risque de se désabonné.
+                    <p class="card-text mx-5 fw-bold h5 d-none d-lg-block">Le client n'est pas statisfait des services.</p> 
                 <?php endif;?>
+                <p class="card-text mx-5 fw-bold h6 d-none d-lg-block">Il y a <?=$class_1_proba;?>% de chance qu'il se désabonne.</p>
                 <a href="../index.php" class="btn btn-secondary mt-3 btn-lg"><i class="bi bi-skip-backward-fill me-2"></i>Retour</a>
             </div>
         </div>
